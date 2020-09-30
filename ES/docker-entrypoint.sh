@@ -37,8 +37,6 @@ if [[ $type = 'plugin' ]]; then
   sed -i 's/\s*database_password.*/    database_password:/g' app/config/parameters.yml
 
   #创建数据库用于编包
-  apt-get update
-  apt-get install -y mysql-server
   service mysql start
 
   mysql -uroot -e "drop database if exists \`edusoho_for_build\`";
